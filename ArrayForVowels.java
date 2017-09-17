@@ -1,6 +1,11 @@
 
 import java.util.*;
-
+/**
+ * A program to take 10 lines of input as Strings, determine which lines begin and end with a vowel,
+ * then return an array with only those lines.
+ * @author j
+ *
+ */
 public class ArrayForVowels {
 
 	
@@ -30,7 +35,11 @@ public class ArrayForVowels {
 		*/
 		
 	}//end main
-	
+	/**
+	 * takes a String array and returns the index(s) if any of words that begin and end with a vowel
+	 * @param input String array to be parsed
+	 * @return int array with index of words that begin and end with a vowel
+	 */
 	public static int[] findVowelNames(String[] input) {
 		
 		int count =0;
@@ -61,7 +70,12 @@ public class ArrayForVowels {
 		positions=Arrays.copyOf(positions, count);
 		return positions;
 	}
-	
+	/**
+	 * takes a String array and an int array of positions inside the array to extract elements and  place in another array, returns the third array
+	 * @param input String array to copy elements from 
+	 * @param positions int array of indexes to copy
+	 * @return String array with elements of the string array copied from indexes at the int array
+	 */
 	public static String[] finalizeArray(String[] input, int[] positions) {
 		
 		String[] finalArray = new String[positions.length];
