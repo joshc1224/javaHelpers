@@ -50,6 +50,61 @@ public class MyArrays {
 		return returnIndex;
 	}
 	
+	/**
+	 * find the smallest number in an array after the index supplied as minPos
+	 * @param arr array to locate smallest number in
+	 * @param minPos index to begin searching at
+	 * @return index of smallest element of the array
+	 */
+	public static int minPos(int[] arr, int minPos) {
+		int smallest=arr[minPos];
+		int lowIndex=minPos;
+		for (int i = minPos;i<arr.length;i++) {
+			if (arr[i]<smallest) {
+				smallest=arr[i];
+				lowIndex=i;
+			}
+		}
+		return lowIndex;
+	}
+	/**
+	 * swap two elements of an array
+	 * @param arr array to swap elements in
+	 * @param to index to place from at
+	 * @param from index to place to at
+	 */
+	public static void swap(int[] arr, int to, int from) {
+		int temp = arr[to];
+		arr[to]=arr[from];
+		arr[from]=temp;
+	}
+	/**
+	 * sort an array in ascending order
+	 * @param args array to be sorted
+	 */
+	public static void sort(int[] args) {
+
+		for (int i=0;i<args.length;i++) {
+			swap(args, i, minPos(args, i));
+		}
+		//System.out.println(Arrays.toString(test));
+	}
+	/**
+	 * create an array of random integers
+	 * @param size size of the array
+	 * @param lowerLimit lowest integer to place in the array
+	 * @param upperLimit highest integer to place in the array
+	 * @return
+	 */
+	public static int[] randomArray(int size, int lowerLimit, int upperLimit) {
+		
+		int [] randos=new int[size];
+		for (int i=0;i<randos.length;i++) {
+			randos[i]=(int)(Math.random()*(upperLimit-lowerLimit));
+		}
+		return randos;
+	}
+	
 }//end class
 
 

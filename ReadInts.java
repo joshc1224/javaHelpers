@@ -274,5 +274,23 @@ public class ReadInts {
 			return false;
 		}
 	}//end leapYear
+	
+public static double getADouble() {
+		
+		Scanner sc = new Scanner(System.in);
+		double a=0;
+		boolean choosing = true;
+		//System.out.println("...");
+		while (choosing) {
+			
+			if(sc.hasNextDouble()) {
+				a=sc.nextDouble();
+				choosing = false;
+			}else {
+				System.out.print("Please enter a double value: ");
+				sc.next();
+			}
+		}return a;
+	}//end get a double
 }//end class	
 	
